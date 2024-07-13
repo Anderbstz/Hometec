@@ -1,0 +1,593 @@
+/* styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+/*Encabezado*/
+
+.main-header {
+    position: sticky;
+    top: 0;
+    background-color: #171FCD;
+    z-index: 10;
+    text-align:center;
+    padding: 0px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.header-container > h1 {
+    margin: 0;
+    color: #FFF;
+    padding: 10px;
+}
+
+.footer {
+    background-color: #007bff; 
+    color: white;
+    padding: 0px;
+    width: 100%;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer a:hover {
+    color: #ffc107; 
+}
+
+.div-cred {
+    margin: 0;
+    padding: 0.75rem;
+    background-color: #ffc107;
+    display: block;
+    width: 100%;
+}
+
+.foot{
+    padding: 0;
+}
+
+/* corregir  boton */
+.search-container {
+    display: flex;
+    width: 50%;
+}
+
+#searchInput {
+    flex-grow: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0; 
+}
+
+#btn-search {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none; 
+    margin-left: 0; 
+}
+
+/* Navbar */
+@media (max-width: 991.98px) {
+    .container-fluid {
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        order: -1;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-list {
+        display: none;
+        width: 100%;
+    }
+
+    .menu-list.active {
+        display: block;
+    }
+
+    .menu ul li {
+        width: 100%;
+    }
+
+    .menu ul ul {
+        position: static;
+        width: 100%;
+    }
+
+    form.d-flex {
+        order: 1;
+        width: 100% !important;
+        margin: 10px 0;
+    }
+
+    .d-flex:last-child {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* Menú - Categorías*/
+.menu-icon {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu {
+    position: relative;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Ocultar el menú inicialmente */
+    flex-direction: column; /* Mostrar elementos en columna */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #026de0; /* Color de fondo para el menú principal */
+    z-index: 1; /* Asegurar que el menú esté sobre otros contenidos */
+}
+
+.menu ul.active {
+    display: flex; /* Mostrar el menú cuando está activo */
+}
+
+.menu ul li {
+    position: relative;
+    margin-right: 0; /* Eliminar margen derecho para que no haya espacio entre elementos */
+}
+
+.menu ul li a {
+    color: #d5e9ff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.menu ul ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Despliegue a la derecha del elemento padre */
+    background-color: #007bff; /* Color de fondo para los submenús de primer nivel */
+    padding: 0;
+    width: 200px;
+}
+
+.menu ul ul ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Despliegue a la derecha del elemento padre */
+    background-color: #007bff; /* Color de fondo para los submenús de segundo nivel */
+    padding: 0;
+    width: 200px;
+}
+
+/* Estilos para hover */
+.menu ul li:hover > a {
+    background-color: #edf5fe; /* Fondo blanco en hover */
+    color: #171FCD; /* Texto azul oscuro en hover */
+}
+
+.menu ul li:hover > ul {
+    display: block;
+}
+
+.menu ul ul li:hover > a {
+    background-color: #edf5fe; /* Amarillo suave en hover para segundo nivel */
+    color: #007bff; /* Texto azul claro en hover para segundo nivel */
+}
+
+.menu ul ul li:hover > ul {
+    display: block;
+}
+
+/* Menú Responsivo*/
+/* Estilos para menú responsive */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .navbar-toggler {
+        order: 1;
+        margin-right: 0;
+    }
+
+    .collapse.navbar-collapse {
+        order: 2;
+    }
+
+    .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: #171FCD; /* Color de fondo para el menú desplegable */
+    }
+
+    .dropdown-menu .dropdown-menu {
+        background-color: #007bff; /* Color de fondo para los submenús */
+    }
+}
+
+/*Carrusel*/
+.carousel-container {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+#SliderBv5 {
+    width: 100%;
+}
+
+#SliderBv5 .carousel-item {
+    height: 300px;
+}
+
+@media (min-width: 769px) {
+    #SliderBv5 .carousel-item {
+        height: 500px;
+    }
+}
+
+#SliderBv5 .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Categorias*/
+
+.categoria-container {
+    background-color: #ffc107; 
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.menu-categorias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item-categoria {
+    text-align: center;
+    padding: 15px;
+    margin: 10px 50px; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.item-categoria:hover {
+    transform: scale(1.05);
+    border-bottom-color: #007bff;
+}
+
+.item-categoria i {
+    font-size: 24px;
+    color: #007bff;
+}
+
+.item-categoria p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Estilos para enlaces */
+.item-categoria a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del texto del padre */
+    display: block; /* Asegura que el enlace ocupe todo el espacio del item-categoria */
+    transition: color 0.3s ease; /* Transición de color al pasar el ratón */
+}
+
+.item-categoria a:hover {
+    color: #007bff; /* Cambia el color al pasar el ratón */
+}
+
+@media (max-width: 768px) {
+    .menu-categorias {
+        flex-direction: column;
+    }
+    
+    .item-categoria {
+        width: 100%;
+        border-bottom: 1px solid #dee2e6;
+        margin: 10px 0; 
+    }
+    
+    .item-categoria:last-child {
+        border-bottom: none;
+    }
+}
+
+/*Carrusel*/
+
+#SliderBv5 {
+    max-width: 800px; /* Ancho máximo del carrusel */
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Estilo para hacer los slides más largos */
+.carousel-item {
+    height: 400px; /* Altura mayor para mostrar más contenido */
+}
+
+/* Ajustes para las imágenes dentro de los slides */
+.carousel-item img {
+    height: 100%; /* Ocupa toda la altura del slide */
+    width: auto; /* Ancho automático para mantener la relación de aspecto */
+    object-fit: cover; /* Ajusta la imagen para cubrir todo el espacio */
+}
+/* Estilo para tarjetas de productos */
+.card {
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+/* Efecto de hover */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+/* carro */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.title-cart {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.subtitle-cart {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.discount-code {
+    background-color: #ffeb3b;
+    color: #856404;
+}
+
+.discount-code .btn-outline-secondary {
+    color: #856404;
+    border-color: #856404;
+}
+
+.discount-code .btn-outline-secondary:hover {
+    background-color: #856404;
+    color: #fff;
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+}
+
+.summary {
+    border: 1px solid #eaeaea;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.summary h4 {
+    margin-bottom: 20px;
+}
+
+.summary p {
+    font-size: 1.2em;
+}
+
+.btn-primary {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+.btn-primary:hover {
+    background-color: #563d7c;
+    border-color: #563d7c;
+}
+
+/*CoCINA*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #004aad;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+nav .search-bar {
+    display: flex;
+}
+
+nav .search-bar input {
+    padding: 5px;
+    font-size: 1em;
+}
+
+nav .search-bar button {
+    padding: 5px 10px;
+    background-color: #ff9900;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #004aad;
+}
+
+aside {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+section.product-list {
+    margin-left: 22%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 23%;
+    margin: 1%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+}
+
+/* Estilos para enlaces */
+/* styles.css */
+
+.text-decoration-line-through {
+    text-decoration: line-through;
+}
+
+.header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+  }  
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.timer div {
+    margin: 0 10px;
+    text-align: center;
+    color: black;
+}
+
+.timer span {
+    font-size: 2rem;
+    display: block;
+}
+
+.promo-banner {
+    margin-bottom: 20px;
+  }
+
+.promo-banner .card {
+    margin: 10px;
+    width: 100%;
+}
+
+.promo-banner .card img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos para el banner */
+
+/*Carruselle*/
+#SliderBv5 {
+    width: 100vw !important; /* Importante agregar !important para priorizar sobre otros estilos */
+    max-width: 100%; /* Para asegurar que no exceda el ancho del viewport */
+}
+#SliderBv5 .carousel-inner {
+    width: 100%; /* Asegura que el carrusel interno tenga el mismo ancho */
+}
+#SliderBv5 .carousel-item {
+    width: 100%; /* Asegura que cada item del carrusel tenga el mismo ancho */
+}
+#SliderBv5 .carousel-item img {
+    width: 100%; /* Ajusta el ancho de las imágenes al 100% */
+    height: auto; /* Para mantener la proporción de las imágenes */
+    object-fit: cover; /* Ajuste para cubrir el contenedor sin distorsión */
+}
+/* styles.css */
+.bg-yellow {
+    background-color: #ffc107;
+    padding: 20px;
+    border-radius: 5px;
+}
